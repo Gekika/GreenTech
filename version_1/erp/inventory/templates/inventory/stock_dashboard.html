@@ -1,0 +1,15 @@
+<h1>Stock Dashboard</h1>
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Current Stock</th>
+                <th>Minimum Stock Level</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.stock_quantity }}</td>
+                <td>{{ product.minimum_stock_level }}</td>
+            </tr>
+            {% endfor %}
+        </table>
