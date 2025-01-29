@@ -55,3 +55,21 @@ class ReportView(APIView):
         # Logic for generating weekly and monthly reports
         # This could involve aggregating data from StockEntry and Sale
         pass
+
+
+class HomePageDataView(APIView):
+    def get(self, request):
+        """
+        Fetch product data to display on the homepage.
+        """
+        products = Product.objects.all()
+        data = {
+            "labels": [product.name for product in products],
+            "datasets": [
+                {
+                    "data": [product.stock_quantity for product in products],
+                    "backgroundColor": ["#FF6384", "#36A2EB", "#FFCE56"],
+                },
+            ],
+        }
+        return Response(data)
