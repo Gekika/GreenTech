@@ -84,7 +84,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5000',
+        'PORT': '5432',
     }
 }
 
@@ -131,5 +131,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # Vue.js app's URL
+    "http://localhost:3000",  # React frontend
+
+    # 'http://localhost:5173',  # Vue.js app's URL
 ]
